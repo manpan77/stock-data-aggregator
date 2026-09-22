@@ -1,0 +1,10 @@
+{
+    "name": "stox",
+    "type": "mongodb-atlas",
+    "config": {
+        "clusterName": "stox",
+        "readPreference": "primary",
+        "wireProtocolEnabled": false
+    },
+    "version": 1
+}
