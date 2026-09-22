@@ -2,7 +2,7 @@
   "name": "aggregationJob",
   "type": "SCHEDULED",
   "config": {
-    "schedule": "0 * * * *"
+    "schedule": "*/2 * * * *"
   },
   "function_name": "aggregationJob",
   "state": "enabled",
