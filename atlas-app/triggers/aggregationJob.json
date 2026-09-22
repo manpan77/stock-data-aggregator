@@ -1,5 +1,5 @@
 {
-  "name": "aggregationScheduler",
+  "name": "aggregationJob",
   "type": "SCHEDULED",
   "schedule": "*/2 * * * *",
   "function_name": "aggregationJob",
