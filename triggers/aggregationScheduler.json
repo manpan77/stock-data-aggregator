@@ -1,0 +1,7 @@
+{
+  "name": "aggregationScheduler",
+  "type": "SCHEDULED",
+  "schedule": "*/2 * * * *",
+  "function_name": "aggregationJob",
+  "disabled": false
+}
