@@ -1,0 +1,16 @@
+{
+    "name": "aggregationJob",
+    "type": "SCHEDULED",
+    "disabled": false,
+    "config": {
+        "schedule": "0 0 * * *",
+        "skip_catchup_events": false
+    },
+    "event_processors": {
+        "FUNCTION": {
+            "config": {
+                "function_name": "aggregationJob"
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+[
+    {
+        "name": "aggregationJob",
+        "private": false,
+        "disable_arg_logs": true
+    }
+]
