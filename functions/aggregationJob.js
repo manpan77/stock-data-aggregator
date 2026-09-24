@@ -4,7 +4,7 @@ exports = async function() {
         .get("stox")
         .db("stock_data");
 
-    const bars1m = db.collection("minute_bars");
+    const bars1m = db.collection("stock_bars");
 
     console.log("Daily aggregation started");
 
