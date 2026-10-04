@@ -93,32 +93,32 @@ function getBucketExpression(targetTimeframe, timezone = "UTC", date = "$timesta
   }
 }
 
-function calculateCutoff(age, unit) {
+function calculateCutoff(retention, unit) {
   const date = new Date();
 
   switch (unit) {
     case "minute":
-      date.setMinutes(date.getMinutes() - age);
+      date.setMinutes(date.getMinutes() - retention);
       break;
 
     case "hour":
-      date.setHours(date.getHours() - age);
+      date.setHours(date.getHours() - retention);
       break;
 
     case "day":
-      date.setDate(date.getDate() - age);
+      date.setDate(date.getDate() - retention);
       break;
 
     case "month":
-      date.setMonth(date.getMonth() - age);
+      date.setMonth(date.getMonth() - retention);
       break;
 
     case "year":
-      date.setFullYear(date.getFullYear() - age);
+      date.setFullYear(date.getFullYear() - retention);
       break;
 
     default:
-      throw new Error(`Unsupported age unit: ${unit}`);
+      throw new Error(`Unsupported retention unit: ${unit}`);
   }
 
   return date;
@@ -128,12 +128,12 @@ async function aggregate(
   db,
   sourceTimeframe,
   targetTimeframe,
-  age,
-  ageUnit
+  retention,
+  retentionUnit
 ) {
   const collection = db.collection("stock_bars");
 
-  const cutoff = calculateCutoff(age, ageUnit);
+  const cutoff = calculateCutoff(retention, retentionUnit);
   const usesExchangeTimezone = ["1d", "1w", "1mo"].includes(targetTimeframe);
   const timezone = usesExchangeTimezone ? "$tickerTimezone" : "UTC";
   const bucketCutoff = getBucketExpression(targetTimeframe, timezone, cutoff);
