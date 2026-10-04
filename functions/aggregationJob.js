@@ -273,9 +273,9 @@ exports = async function() {
 
     console.log("Daily aggregation started");
 
-    await aggregate(db, "1m",  "5m",  1, "day");
-    await aggregate(db, "5m",  "10m", 3, "day");
-    await aggregate(db, "10m", "15m", 5, "day");
+    await aggregate(db, "1m",  "5m",  3, "day");
+    await aggregate(db, "5m",  "10m", 4, "day");
+    await aggregate(db, "10m", "15m", 6, "day");
     await aggregate(db, "15m", "1h",  1, "month");
     await aggregate(db, "1h",  "2h",  3, "month");
     await aggregate(db, "2h",  "4h",  4, "month");
