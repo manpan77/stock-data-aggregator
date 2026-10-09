@@ -223,7 +223,7 @@ async function aggregate(
 
     {
       $merge: {
-        into: "stock_data",
+        into: "stock_bars",
         on: ["ticker", "timeframe", "timestamp"],
         whenMatched: "replace",
         whenNotMatched: "insert"
